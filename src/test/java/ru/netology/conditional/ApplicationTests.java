@@ -41,7 +41,6 @@ class ApplicationTests {
 		ResponseEntity<String> forDev = restTemplate.getForEntity(HOST + devapp.getMappedPort(PORT_DEV) +
 				ENDPOINT, String.class);
 		System.out.println(forDev.getBody());
-		System.out.println(forDev.getBody());
 		Assertions.assertEquals("Current profile is dev", forDev.getBody());
 	}
 
@@ -49,7 +48,6 @@ class ApplicationTests {
 	void contextLoadsProd() {
 		ResponseEntity<String> forProd = restTemplate.getForEntity(HOST + prodapp.getMappedPort(PORT_PROD) +
 				ENDPOINT, String.class);
-		System.out.println(forProd.getBody());
 		System.out.println(forProd.getBody());
 		Assertions.assertEquals("Current profile is production", forProd.getBody());
 	}
